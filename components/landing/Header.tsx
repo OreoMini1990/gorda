@@ -80,7 +80,7 @@ export function Header() {
         <div className="flex items-center gap-3">
           <a
             href="#contact"
-            className="rounded-full bg-accent px-6 py-2.5 text-sm font-bold text-primary shadow-lg transition-transform hover:-translate-y-0.5 hover:bg-yellow-300"
+            className="rounded-full bg-accent px-6 py-2.5 text-sm font-bold text-primary-darker shadow-lg transition-transform hover:-translate-y-0.5 hover:bg-yellow-300"
           >
             상담 신청하기
           </a>

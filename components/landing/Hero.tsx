@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { Sheet } from "@/components/ui/Sheet";
 
 /* 픽 카드 4개 — 레퍼런스와 동일 항목/아이콘 */
 const PICK_ITEMS = [
@@ -11,10 +12,14 @@ const PICK_ITEMS = [
   { id: "marketing",label: "마케팅/HR", icon: "campaign",        defaultSelected: true  },
 ];
 
+const BROCHURE_MESSAGE =
+  "준비 중입니다. 상담 신청을 주시면 자세한 소개서를 받아보실 수 있습니다.";
+
 export function Hero() {
   const [selected, setSelected] = useState<Set<string>>(
     () => new Set(PICK_ITEMS.filter((i) => i.defaultSelected).map((i) => i.id))
   );
+  const [showBrochureMessage, setShowBrochureMessage] = useState(false);
 
   const toggle = (id: string) =>
     setSelected((prev) => {
@@ -105,13 +110,34 @@ export function Hero() {
                     arrow_forward
                   </span>
                 </a>
-                <a
-                  href="#solution"
+                <button
+                  type="button"
+                  onClick={() => setShowBrochureMessage(true)}
                   className="flex items-center justify-center rounded-xl border border-white/10 bg-white/5 px-8 py-4 text-base font-medium text-white backdrop-blur-sm transition-all hover:bg-white/10"
                 >
                   서비스 소개서 다운로드
-                </a>
+                </button>
               </motion.div>
+              <Sheet
+                open={showBrochureMessage}
+                onClose={() => setShowBrochureMessage(false)}
+                title="서비스 소개서"
+                variant="center"
+              >
+                <p className="mb-6 leading-relaxed text-gray-700">
+                  {BROCHURE_MESSAGE}
+                </p>
+                <a
+                  href="#contact"
+                  onClick={() => setShowBrochureMessage(false)}
+                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-6 py-3 font-bold text-white transition-colors hover:bg-primary/90"
+                >
+                  상담 신청하기
+                  <span className="material-symbols-outlined text-lg">
+                    arrow_forward
+                  </span>
+                </a>
+              </Sheet>
             </motion.div>
           </div>
 
