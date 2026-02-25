@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Gorda Company - Medical Clinic Consultancy</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style type="text/tailwindcss">
+        @layer utilities {
+            .font-pretendard {
+                font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+            }
+        }
+    </style>
+<script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              canvas: "#070B1E",
+              primary: "#323F81",
+              accent: "#FFCE4F",
+              surface: "#FFFFFF",
+              "muted-dark": "rgba(255,255,255,0.75)",
+              "border-panel": "#E5E7EB",
+            },
+            fontFamily: {
+              sans: ["Pretendard", "sans-serif"],
+            },
+            borderRadius: {
+                'panel': '32px',
+            },
+            backgroundImage: {
+                'grid-dark': "linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px), linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px)",
+                'noise': "url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.65%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22 opacity=%220.05%22/%3E%3C/svg%3E')"
+            }
+          },
+        },
+      };
+    </script>
+</head>
+<body class="bg-canvas text-gray-900 font-pretendard antialiased relative overflow-x-hidden">
+<div class="fixed inset-0 pointer-events-none z-0 bg-grid-dark bg-[size:60px_60px]"></div>
+<div class="fixed inset-0 pointer-events-none z-0 bg-noise opacity-30 mix-blend-overlay"></div>
+<nav class="fixed w-full z-50 top-0 left-0 border-b border-white/10 bg-canvas/80 backdrop-blur-md">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-20">
+<div class="bg-white rounded-full px-5 py-2 flex items-center gap-3 shadow-lg">
+<div class="grid grid-cols-3 gap-0.5 w-6 h-6">
+<div class="bg-primary w-full h-full"></div>
+<div class="bg-primary w-full h-full"></div>
+<div class="bg-accent w-full h-full"></div>
+<div class="bg-primary w-full h-full"></div>
+<div class="bg-accent w-full h-full"></div>
+<div class="bg-primary w-full h-full"></div>
+<div class="bg-accent w-full h-full"></div>
+<div class="bg-primary w-full h-full"></div>
+<div class="bg-primary w-full h-full"></div>
+</div>
+<span class="text-lg font-bold tracking-tight text-primary">GORDA</span>
+</div>
+<div class="hidden md:flex space-x-10 items-center">
+<a class="text-sm font-medium text-muted-dark hover:text-accent transition-colors" href="#problem">문제점</a>
+<a class="text-sm font-medium text-muted-dark hover:text-accent transition-colors" href="#solution">솔루션</a>
+<a class="text-sm font-medium text-muted-dark hover:text-accent transition-colors" href="#proof">증명</a>
+<a class="text-sm font-medium text-muted-dark hover:text-accent transition-colors" href="#medifirst">메디퍼스트</a>
+</div>
+<div class="flex items-center space-x-4">
+<button class="bg-accent hover:bg-yellow-400 text-primary px-6 py-2.5 rounded-full text-sm font-bold shadow-lg transition-transform transform hover:-translate-y-0.5">
+                        상담 신청하기
+                    </button>
+</div>
+</div>
+</div>
+</nav>
+<section class="relative pt-40 pb-32 lg:pt-48 lg:pb-40 z-10 overflow-hidden">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid lg:grid-cols-12 gap-12 items-center">
+<div class="lg:col-span-7">
+<div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/20 bg-white/5 text-accent text-sm font-medium mb-8 backdrop-blur-sm">
+<span class="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
+                        Premium Medical Consultancy
+                    </div>
+<h1 class="text-5xl md:text-7xl font-bold tracking-tight text-white leading-[1.15] mb-8">
+                        전부 맡기지 마십시오.<br/>
+<span class="text-transparent bg-clip-text bg-gradient-to-r from-accent to-yellow-200">필요한 것만</span><br/>
+                        고르십시오.
+                    </h1>
+<p class="text-xl text-muted-dark mb-12 max-w-2xl leading-relaxed font-light">
+                        기존의 불투명하고 무거운 컨설팅은 잊으세요.<br/>
+                        GORDA는 원장님께 꼭 필요한 서비스만 'Pick'하여 합리적으로 제공합니다.
+                    </p>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="bg-primary border border-primary text-white px-8 py-4 rounded-xl text-base font-bold hover:bg-primary/90 transition-all flex items-center justify-center group shadow-lg shadow-primary/30">
+                            무료 상담 신청하기
+                            <span class="material-symbols-outlined ml-2 group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+<button class="bg-white/5 backdrop-blur-sm border border-white/10 text-white hover:bg-white/10 px-8 py-4 rounded-xl text-base font-medium transition-all">
+                            서비스 소개서 다운로드
+                        </button>
+</div>
+</div>
+<div class="lg:col-span-5 relative">
+<div class="relative bg-surface rounded-2xl p-6 shadow-2xl rotate-3 hover:rotate-0 transition-transform duration-500 ease-out border border-white/10">
+<div class="absolute -top-4 -right-4 bg-accent text-primary font-bold px-4 py-2 rounded-lg shadow-lg z-20">Pick Your Success</div>
+<div class="grid grid-cols-2 gap-3">
+<div class="bg-gray-50 p-4 rounded-xl border border-gray-100 flex flex-col items-center text-center gap-2">
+<div class="bg-primary/10 p-2 rounded-full text-primary">
+<span class="material-symbols-outlined">location_on</span>
+</div>
+<span class="text-sm font-bold text-gray-800">입지 분석</span>
+<div class="w-4 h-4 rounded-full border-2 border-gray-300"></div>
+</div>
+<div class="bg-primary/5 p-4 rounded-xl border-2 border-primary flex flex-col items-center text-center gap-2 relative overflow-hidden">
+<div class="absolute top-2 right-2 text-primary">
+<span class="material-symbols-outlined text-lg">check_circle</span>
+</div>
+<div class="bg-primary text-white p-2 rounded-full shadow-md">
+<span class="material-symbols-outlined">account_balance</span>
+</div>
+<span class="text-sm font-bold text-primary">자금/금융</span>
+</div>
+<div class="bg-gray-50 p-4 rounded-xl border border-gray-100 flex flex-col items-center text-center gap-2 opacity-50">
+<div class="bg-gray-200 p-2 rounded-full text-gray-400">
+<span class="material-symbols-outlined">architecture</span>
+</div>
+<span class="text-sm font-bold text-gray-400">인테리어</span>
+<div class="w-4 h-4 rounded-full border-2 border-gray-300"></div>
+</div>
+<div class="bg-primary/5 p-4 rounded-xl border-2 border-primary flex flex-col items-center text-center gap-2 relative overflow-hidden">
+<div class="absolute top-2 right-2 text-primary">
+<span class="material-symbols-outlined text-lg">check_circle</span>
+</div>
+<div class="bg-primary text-white p-2 rounded-full shadow-md">
+<span class="material-symbols-outlined">campaign</span>
+</div>
+<span class="text-sm font-bold text-primary">마케팅</span>
+</div>
+</div>
+<div class="mt-6 border-t pt-4 flex justify-between items-center">
+<span class="text-sm text-gray-500">Selected Services</span>
+<span class="font-bold text-primary text-lg">2 Items</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<div class="relative z-10 py-10" id="problem">
+<div class="text-center mb-6">
+<span class="text-sm font-medium text-muted-dark tracking-[0.2em] uppercase">Chapter 01. The Problem</span>
+</div>
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="bg-surface rounded-panel p-8 md:p-16 shadow-2xl relative overflow-hidden">
+<div class="max-w-3xl mx-auto text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold text-primary mb-6">왜 개원 컨설팅은 항상<br/>불투명하고 비쌀까요?</h2>
+<p class="text-gray-600 text-lg">
+                        전체 패키지라는 명목 하에 불필요한 비용이 청구되고, 전문가가 아닌 영업사원이 대행하는 관행.
+                        이제는 바뀌어야 합니다.
+                    </p>
+</div>
+<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="bg-gray-50 p-8 rounded-2xl hover:bg-white hover:shadow-xl transition-all duration-300 border border-transparent hover:border-gray-100 group">
+<div class="w-12 h-12 bg-gray-200 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-gray-500 group-hover:text-white">visibility_off</span>
+</div>
+<h3 class="font-bold text-lg mb-3">비용의 불투명성</h3>
+<p class="text-gray-500 text-sm leading-relaxed">세부 내역 없이 뭉뚱그려 청구되는 컨설팅 비용의 문제점</p>
+</div>
+<div class="bg-gray-50 p-8 rounded-2xl hover:bg-white hover:shadow-xl transition-all duration-300 border border-transparent hover:border-gray-100 group">
+<div class="w-12 h-12 bg-gray-200 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-gray-500 group-hover:text-white">block</span>
+</div>
+<h3 class="font-bold text-lg mb-3">강매형 패키지</h3>
+<p class="text-gray-500 text-sm leading-relaxed">필요하지 않은 서비스까지 포함된 올인원 계약 강요</p>
+</div>
+<div class="bg-gray-50 p-8 rounded-2xl hover:bg-white hover:shadow-xl transition-all duration-300 border border-transparent hover:border-gray-100 group">
+<div class="w-12 h-12 bg-gray-200 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-gray-500 group-hover:text-white">person_off</span>
+</div>
+<h3 class="font-bold text-lg mb-3">비전문가 진행</h3>
+<p class="text-gray-500 text-sm leading-relaxed">계약은 대표가, 실무는 경험 부족한 신입 직원이 진행</p>
+</div>
+<div class="bg-gray-50 p-8 rounded-2xl hover:bg-white hover:shadow-xl transition-all duration-300 border border-transparent hover:border-gray-100 group">
+<div class="w-12 h-12 bg-gray-200 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-gray-500 group-hover:text-white">sync_problem</span>
+</div>
+<h3 class="font-bold text-lg mb-3">소통의 부재</h3>
+<p class="text-gray-500 text-sm leading-relaxed">원장님의 니즈보다 업체의 편의를 우선시하는 일방통행</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="relative z-10 py-10" id="solution">
+<div class="text-center mb-6">
+<span class="text-sm font-medium text-muted-dark tracking-[0.2em] uppercase">Chapter 02. The Solution</span>
+</div>
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="bg-surface rounded-panel p-8 md:p-16 shadow-2xl">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+<div>
+<h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">GORDA Pick &amp; Build</h2>
+<p class="text-gray-600 max-w-xl">
+                            필요한 조각만 선택하여 완성하는 스마트한 개원.<br/>
+                            원하는 모듈을 선택하시면 맞춤형 제안서를 보내드립니다.
+                        </p>
+</div>
+<div class="hidden md:block">
+<span class="inline-flex items-center gap-2 px-4 py-2 bg-gray-100 rounded-lg text-sm text-gray-600 font-medium">
+<span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+                            선택한 서비스만 과금됩니다
+                        </span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<label class="cursor-pointer group relative">
+<input class="peer sr-only" type="checkbox"/>
+<div class="bg-white border-2 border-gray-100 rounded-2xl p-6 hover:border-primary/30 peer-checked:border-primary peer-checked:bg-primary/5 transition-all h-full">
+<div class="flex justify-between items-start mb-4">
+<div class="p-3 bg-gray-50 rounded-xl text-gray-600 peer-checked:bg-primary peer-checked:text-white transition-colors">
+<span class="material-symbols-outlined">location_on</span>
+</div>
+<div class="w-6 h-6 rounded-full border-2 border-gray-200 peer-checked:border-primary peer-checked:bg-primary flex items-center justify-center transition-all">
+<span class="material-symbols-outlined text-white text-[14px] opacity-0 peer-checked:opacity-100">check</span>
+</div>
+</div>
+<h4 class="text-xl font-bold text-gray-900 mb-2">입지 분석</h4>
+<p class="text-sm text-gray-500 leading-relaxed">빅데이터 기반 상권 분석 및 경쟁 병원 현황 파악</p>
+</div>
+</label>
+<label class="cursor-pointer group relative">
+<input checked="" class="peer sr-only" type="checkbox"/>
+<div class="bg-white border-2 border-gray-100 rounded-2xl p-6 hover:border-primary/30 peer-checked:border-primary peer-checked:bg-primary/5 transition-all h-full">
+<div class="flex justify-between items-start mb-4">
+<div class="p-3 bg-gray-50 rounded-xl text-gray-600 peer-checked:bg-primary peer-checked:text-white transition-colors">
+<span class="material-symbols-outlined">account_balance</span>
+</div>
+<div class="w-6 h-6 rounded-full border-2 border-gray-200 peer-checked:border-primary peer-checked:bg-primary flex items-center justify-center transition-all">
+<span class="material-symbols-outlined text-white text-[14px] opacity-0 peer-checked:opacity-100">check</span>
+</div>
+</div>
+<h4 class="text-xl font-bold text-gray-900 mb-2">자금/금융</h4>
+<p class="text-sm text-gray-500 leading-relaxed">닥터론 최저 금리 비교, 예산 운용 포트폴리오</p>
+</div>
+</label>
+<label class="cursor-pointer group relative">
+<input class="peer sr-only" type="checkbox"/>
+<div class="bg-white border-2 border-gray-100 rounded-2xl p-6 hover:border-primary/30 peer-checked:border-primary peer-checked:bg-primary/5 transition-all h-full">
+<div class="flex justify-between items-start mb-4">
+<div class="p-3 bg-gray-50 rounded-xl text-gray-600 peer-checked:bg-primary peer-checked:text-white transition-colors">
+<span class="material-symbols-outlined">architecture</span>
+</div>
+<div class="w-6 h-6 rounded-full border-2 border-gray-200 peer-checked:border-primary peer-checked:bg-primary flex items-center justify-center transition-all">
+<span class="material-symbols-outlined text-white text-[14px] opacity-0 peer-checked:opacity-100">check</span>
+</div>
+</div>
+<h4 class="text-xl font-bold text-gray-900 mb-2">인테리어</h4>
+<p class="text-sm text-gray-500 leading-relaxed">진료 동선 최적화 설계 및 시공사 경쟁 입찰</p>
+</div>
+</label>
+<label class="cursor-pointer group relative">
+<input class="peer sr-only" type="checkbox"/>
+<div class="bg-white border-2 border-gray-100 rounded-2xl p-6 hover:border-primary/30 peer-checked:border-primary peer-checked:bg-primary/5 transition-all h-full">
+<div class="flex justify-between items-start mb-4">
+<div class="p-3 bg-gray-50 rounded-xl text-gray-600 peer-checked:bg-primary peer-checked:text-white transition-colors">
+<span class="material-symbols-outlined">gavel</span>
+</div>
+<div class="w-6 h-6 rounded-full border-2 border-gray-200 peer-checked:border-primary peer-checked:bg-primary flex items-center justify-center transition-all">
+<span class="material-symbols-outlined text-white text-[14px] opacity-0 peer-checked:opacity-100">check</span>
+</div>
+</div>
+<h4 class="text-xl font-bold text-gray-900 mb-2">법무/세무</h4>
+<p class="text-sm text-gray-500 leading-relaxed">의료법 검토, 사업자 등록, 세무 기장 및 절세 전략</p>
+</div>
+</label>
+<label class="cursor-pointer group relative">
+<input class="peer sr-only" type="checkbox"/>
+<div class="bg-white border-2 border-gray-100 rounded-2xl p-6 hover:border-primary/30 peer-checked:border-primary peer-checked:bg-primary/5 transition-all h-full">
+<div class="flex justify-between items-start mb-4">
+<div class="p-3 bg-gray-50 rounded-xl text-gray-600 peer-checked:bg-primary peer-checked:text-white transition-colors">
+<span class="material-symbols-outlined">medical_services</span>
+</div>
+<div class="w-6 h-6 rounded-full border-2 border-gray-200 peer-checked:border-primary peer-checked:bg-primary flex items-center justify-center transition-all">
+<span class="material-symbols-outlined text-white text-[14px] opacity-0 peer-checked:opacity-100">check</span>
+</div>
+</div>
+<h4 class="text-xl font-bold text-gray-900 mb-2">의료장비</h4>
+<p class="text-sm text-gray-500 leading-relaxed">필수 장비 리스트업 및 최적가 구매 대행</p>
+</div>
+</label>
+<label class="cursor-pointer group relative">
+<input checked="" class="peer sr-only" type="checkbox"/>
+<div class="bg-white border-2 border-gray-100 rounded-2xl p-6 hover:border-primary/30 peer-checked:border-primary peer-checked:bg-primary/5 transition-all h-full">
+<div class="flex justify-between items-start mb-4">
+<div class="p-3 bg-gray-50 rounded-xl text-gray-600 peer-checked:bg-primary peer-checked:text-white transition-colors">
+<span class="material-symbols-outlined">campaign</span>
+</div>
+<div class="w-6 h-6 rounded-full border-2 border-gray-200 peer-checked:border-primary peer-checked:bg-primary flex items-center justify-center transition-all">
+<span class="material-symbols-outlined text-white text-[14px] opacity-0 peer-checked:opacity-100">check</span>
+</div>
+</div>
+<h4 class="text-xl font-bold text-gray-900 mb-2">마케팅</h4>
+<p class="text-sm text-gray-500 leading-relaxed">온/오프라인 통합 마케팅 전략, BI 개발</p>
+</div>
+</label>
+</div>
+<div class="mt-12 text-center">
+<button class="bg-primary text-white px-10 py-4 rounded-xl font-bold shadow-xl hover:bg-primary/90 transition-all">
+                        선택한 2개 항목 견적 확인하기
+                    </button>
+</div>
+</div>
+</div>
+</div>
+<div class="relative z-10 py-10" id="proof">
+<div class="text-center mb-6">
+<span class="text-sm font-medium text-muted-dark tracking-[0.2em] uppercase">Chapter 03. The Proof</span>
+</div>
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="bg-surface rounded-panel p-8 md:p-16 shadow-2xl">
+<div class="lg:grid lg:grid-cols-2 gap-16 items-center">
+<div>
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-4xl text-green-600">monitor_heart</span>
+<span class="text-2xl font-bold text-gray-900">BIT Computer</span>
+</div>
+<h2 class="text-3xl font-bold text-primary mb-6">국내 1위 EMR 비트컴퓨터<br/>공식 컨설팅 파트너</h2>
+<p class="text-gray-600 text-lg mb-8 leading-relaxed">
+                            GORDA는 비트컴퓨터의 검증된 기술력과 네트워크를 바탕으로 가장 안정적인 디지털 진료 환경을 구축해드립니다.
+                            단순한 협력을 넘어선, 기술적 통합을 경험해보세요.
+                        </p>
+<div class="grid grid-cols-2 gap-6">
+<div class="border-l-4 border-accent pl-4">
+<span class="block text-3xl font-bold text-gray-900 mb-1">150+</span>
+<span class="text-sm text-gray-500">누적 컨설팅 병원</span>
+</div>
+<div class="border-l-4 border-accent pl-4">
+<span class="block text-3xl font-bold text-gray-900 mb-1">98%</span>
+<span class="text-sm text-gray-500">개원 후 1년 생존율</span>
+</div>
+<div class="border-l-4 border-accent pl-4">
+<span class="block text-3xl font-bold text-gray-900 mb-1">12yr</span>
+<span class="text-sm text-gray-500">평균 컨설턴트 경력</span>
+</div>
+<div class="border-l-4 border-accent pl-4">
+<span class="block text-3xl font-bold text-gray-900 mb-1">Top 1</span>
+<span class="text-sm text-gray-500">소비자 만족도 지수</span>
+</div>
+</div>
+</div>
+<div class="mt-12 lg:mt-0 relative">
+<div class="aspect-square bg-gray-100 rounded-2xl relative overflow-hidden">
+<img alt="Partnership Background" class="w-full h-full object-cover opacity-80 mix-blend-overlay grayscale" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6mxANBbLTsfIr-ol39ea9yb8xKrcJFRlH09y-Vg_WbZcKbKTH-Dnd-_zHs3s7uEWRHra6grvL4-ZicEp2yAPznFGkIuZVrNuRnb2AOEx1VIyXZR5P4v9DB88GTNoNkWQ8Z95XNCVrJd_r9LkIdFcu1V5wx82Y8uiHbWu8Gm2jpwHiXywU_Suq5uJBqeRJ0O7x9tkWWhsmErq1fYjtscGF_PrcfwfaMD-0ocZlxMi5LLqQTXVLfjPxX3YSr5Ji-tNOPDosBLJdPXg"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="grid grid-cols-2 gap-4 p-8">
+<div class="bg-white p-6 rounded-xl shadow-lg flex items-center justify-center aspect-square">
+<span class="text-lg font-bold text-gray-400">BIT</span>
+</div>
+<div class="bg-primary p-6 rounded-xl shadow-lg flex items-center justify-center aspect-square text-white">
+<span class="text-lg font-bold">GORDA</span>
+</div>
+<div class="bg-white p-6 rounded-xl shadow-lg flex items-center justify-center aspect-square">
+<span class="material-symbols-outlined text-4xl text-gray-300">handshake</span>
+</div>
+<div class="bg-accent p-6 rounded-xl shadow-lg flex items-center justify-center aspect-square">
+<span class="material-symbols-outlined text-4xl text-primary">verified</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="relative z-10 py-24" id="medifirst">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-16">
+<span class="text-accent text-sm font-bold tracking-widest uppercase mb-3 block">Exclusive Community</span>
+<h2 class="text-3xl md:text-5xl font-bold text-white mb-6">Medifirst Alliance</h2>
+<p class="text-muted-dark text-lg max-w-2xl mx-auto">
+                    "1차의료 종사자들이 실무적으로 앞서갈 수 있는 환경을 만든다"<br/>
+                    GORDA는 국내 최대 의사 커뮤니티 메디퍼스트와 함께합니다.
+                </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+<div class="bg-white/10 backdrop-blur-md border border-white/10 p-8 rounded-2xl hover:bg-white/15 transition-all">
+<span class="material-symbols-outlined text-accent text-3xl mb-4">groups</span>
+<h3 class="text-white font-bold text-lg mb-2">실명제 커뮤니티</h3>
+<p class="text-sm text-gray-400">신뢰할 수 있는 의사들만의 정보 공유 공간</p>
+</div>
+<div class="bg-white/10 backdrop-blur-md border border-white/10 p-8 rounded-2xl hover:bg-white/15 transition-all">
+<span class="material-symbols-outlined text-accent text-3xl mb-4">school</span>
+<h3 class="text-white font-bold text-lg mb-2">학술 세미나</h3>
+<p class="text-sm text-gray-400">최신 임상 지식과 경영 노하우 공유</p>
+</div>
+<div class="bg-white/10 backdrop-blur-md border border-white/10 p-8 rounded-2xl hover:bg-white/15 transition-all">
+<span class="material-symbols-outlined text-accent text-3xl mb-4">assignment_turned_in</span>
+<h3 class="text-white font-bold text-lg mb-2">채용/구직</h3>
+<p class="text-sm text-gray-400">검증된 의료 인력 매칭 서비스</p>
+</div>
+<div class="bg-white/10 backdrop-blur-md border border-white/10 p-8 rounded-2xl hover:bg-white/15 transition-all">
+<span class="material-symbols-outlined text-accent text-3xl mb-4">hub</span>
+<h3 class="text-white font-bold text-lg mb-2">개원 멘토링</h3>
+<p class="text-sm text-gray-400">선배 원장님들의 생생한 개원 조언</p>
+</div>
+</div>
+</div>
+</div>
+<div class="relative z-10 py-10 pb-32" id="contact">
+<div class="text-center mb-6">
+<span class="text-sm font-medium text-muted-dark tracking-[0.2em] uppercase">Chapter 04. Start Now</span>
+</div>
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="bg-surface rounded-panel p-8 md:p-16 shadow-2xl">
+<div class="grid lg:grid-cols-2 gap-16">
+<div>
+<h2 class="text-3xl font-bold text-primary mb-8">자주 묻는 질문</h2>
+<div class="space-y-4">
+<details class="group border-b border-gray-100 pb-4">
+<summary class="flex justify-between items-center font-medium cursor-pointer list-none text-gray-900 group-hover:text-primary transition-colors">
+<span>상담 비용은 어떻게 되나요?</span>
+<span class="transition group-open:rotate-180">
+<span class="material-symbols-outlined">expand_more</span>
+</span>
+</summary>
+<p class="text-gray-600 mt-3 group-open:animate-fadeIn text-sm leading-relaxed">
+                                    기본적인 초기 상담은 무료로 진행됩니다. 이후 원하시는 서비스 모듈을 선택하시면 구체적인 견적을 투명하게 안내해 드립니다.
+                                </p>
+</details>
+<details class="group border-b border-gray-100 pb-4">
+<summary class="flex justify-between items-center font-medium cursor-pointer list-none text-gray-900 group-hover:text-primary transition-colors">
+<span>지방 개원도 컨설팅 가능한가요?</span>
+<span class="transition group-open:rotate-180">
+<span class="material-symbols-outlined">expand_more</span>
+</span>
+</summary>
+<p class="text-gray-600 mt-3 group-open:animate-fadeIn text-sm leading-relaxed">
+                                    네, 가능합니다. GORDA는 전국 주요 도시에 네트워크를 보유하고 있으며, 지역 특성에 맞는 맞춤형 컨설팅을 제공합니다.
+                                </p>
+</details>
+<details class="group border-b border-gray-100 pb-4">
+<summary class="flex justify-between items-center font-medium cursor-pointer list-none text-gray-900 group-hover:text-primary transition-colors">
+<span>개원까지 보통 얼마나 걸리나요?</span>
+<span class="transition group-open:rotate-180">
+<span class="material-symbols-outlined">expand_more</span>
+</span>
+</summary>
+<p class="text-gray-600 mt-3 group-open:animate-fadeIn text-sm leading-relaxed">
+                                    규모와 준비 상황에 따라 다르지만, 통상적으로 입지 선정부터 개원까지 약 3~6개월 정도 소요됩니다.
+                                </p>
+</details>
+</div>
+</div>
+<div class="bg-gray-50 p-8 rounded-2xl">
+<h2 class="text-2xl font-bold text-gray-900 mb-6">상담 신청</h2>
+<form class="space-y-4">
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-1">성함</label>
+<input class="w-full rounded-lg border-gray-300 focus:border-primary focus:ring-primary text-sm" placeholder="홍길동 원장님" type="text"/>
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-1">연락처</label>
+<input class="w-full rounded-lg border-gray-300 focus:border-primary focus:ring-primary text-sm" placeholder="010-0000-0000" type="tel"/>
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-1">관심 분야</label>
+<select class="w-full rounded-lg border-gray-300 focus:border-primary focus:ring-primary text-sm">
+<option>입지 분석</option>
+<option>자금/금융</option>
+<option>인테리어</option>
+<option>기타 통합 문의</option>
+</select>
+</div>
+<div class="pt-2">
+<button class="w-full bg-primary text-white font-bold py-3 rounded-lg shadow-lg hover:bg-primary/90 transition-all" type="submit">
+                                    무료 상담 신청하기
+                                </button>
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+<footer class="bg-canvas border-t border-white/10 relative z-10">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
+<div>
+<div class="flex items-center gap-2 mb-4">
+<div class="grid grid-cols-3 gap-0.5 w-5 h-5 opacity-80">
+<div class="bg-white w-full h-full"></div>
+<div class="bg-white w-full h-full"></div>
+<div class="bg-accent w-full h-full"></div>
+<div class="bg-white w-full h-full"></div>
+<div class="bg-accent w-full h-full"></div>
+<div class="bg-white w-full h-full"></div>
+<div class="bg-accent w-full h-full"></div>
+<div class="bg-white w-full h-full"></div>
+<div class="bg-white w-full h-full"></div>
+</div>
+<span class="text-xl font-bold text-white">GORDA</span>
+</div>
+<p class="text-xs text-muted-dark max-w-sm mb-4">
+                        Gorda Company는 의료인의 성공적인 개원을 위한 최적의 파트너입니다.<br/>
+                        데이터와 경험을 바탕으로 한 맞춤형 솔루션을 제공합니다.
+                    </p>
+<div class="text-[10px] text-gray-500">
+                        서울시 강남구 테헤란로 123 | 대표전화: 02-1234-5678 | 사업자등록번호: 123-45-67890
+                    </div>
+</div>
+<div class="flex flex-col md:items-end gap-2">
+<div class="flex space-x-6">
+<a class="text-gray-400 hover:text-white text-sm" href="#">이용약관</a>
+<a class="text-gray-400 hover:text-white text-sm" href="#">개인정보처리방침</a>
+</div>
+<p class="text-[10px] text-gray-600">© 2024 Gorda Company. All rights reserved.</p>
+</div>
+</div>
+</div>
+</footer>
+
+</body></html>
