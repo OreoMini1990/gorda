@@ -1,10 +1,37 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
+const SITE_URL = "https://gorda.kr";
+
 export const metadata: Metadata = {
   title: "고르다컴퍼니 | 필요한 것만 고르는 1:1맞춤 개원컨설팅",
   description:
     "실전 개원 경험 기반 선택형 개원 컨설팅 플랫폼. 개원, 전부 맡기지 마십시오. 필요한 것만 고르십시오.",
+  metadataBase: new URL(SITE_URL),
+  openGraph: {
+    title: "고르다컴퍼니 | 필요한 것만 고르는 1:1맞춤 개원컨설팅",
+    description:
+      "실전 개원 경험 기반 선택형 개원 컨설팅 플랫폼. 개원, 전부 맡기지 마십시오. 필요한 것만 고르십시오.",
+    url: SITE_URL,
+    siteName: "고르다컴퍼니",
+    locale: "ko_KR",
+    type: "website",
+    images: [
+      {
+        url: "/brand/gorda-logo.png",
+        width: 1200,
+        height: 630,
+        alt: "고르다컴퍼니",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "고르다컴퍼니 | 필요한 것만 고르는 1:1맞춤 개원컨설팅",
+    description:
+      "실전 개원 경험 기반 선택형 개원 컨설팅 플랫폼. 필요한 것만 고르십시오.",
+    images: ["/brand/gorda-logo.png"],
+  },
 };
 
 export default function RootLayout({
