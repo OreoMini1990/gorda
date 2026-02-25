@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 const SITE_URL = "https://gorda.kr";
@@ -66,6 +67,7 @@ export default function RootLayout({
         {/* 고정 노이즈 오버레이 */}
         <div className="fixed inset-0 pointer-events-none z-0 bg-noise opacity-30 mix-blend-overlay" />
         {children}
+        <Analytics />
       </body>
     </html>
   );
