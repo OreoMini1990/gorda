@@ -65,7 +65,7 @@ export function Header() {
             <a
               key={link.href}
               href={link.href}
-              className={`text-sm font-medium transition-colors ${
+              className={`text-base font-medium transition-colors ${
                 activeId === link.href.slice(1)
                   ? "text-accent"
                   : "text-[rgba(255,255,255,0.75)] hover:text-accent"

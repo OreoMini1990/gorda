@@ -37,7 +37,7 @@ export function Solution() {
             initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="mb-2 text-2xl font-bold text-primary md:text-3xl"
+            className="mb-2 text-2xl font-bold text-primary-darker md:text-3xl"
           >
             GORDA Pick &amp; Build
           </motion.h2>

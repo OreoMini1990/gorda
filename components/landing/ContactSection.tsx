@@ -84,7 +84,7 @@ export function ContactSection() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
         >
-          <h2 className="mb-8 text-3xl font-bold text-primary">자주 묻는 질문</h2>
+          <h2 className="mb-8 text-3xl font-bold text-primary-darker">자주 묻는 질문</h2>
           <div className="space-y-0">
             {FAQ_LIST.map((faq, i) => (
               /* details + group → group-open: 변형 활성화 */

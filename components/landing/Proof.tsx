@@ -89,7 +89,7 @@ export function Proof() {
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="mb-6 text-2xl font-bold leading-snug text-primary md:text-3xl"
+            className="mb-6 text-2xl font-bold leading-snug text-primary-darker md:text-3xl"
           >
             검증된 파트너십과
             <br />
@@ -105,7 +105,7 @@ export function Proof() {
             <p>
               <span className="font-semibold text-gray-900">
                 GORDA는 개원 컨설팅을 '
-                <span className="rounded bg-amber-100 px-1.5 py-0.5 font-semibold text-gray-900">
+                <span className="rounded bg-amber-100 px-1.5 py-0.5 font-semibold text-gray-950">
                   한 번의 프로젝트
                 </span>
                 '로 보지 않습니다.
@@ -113,11 +113,11 @@ export function Proof() {
             </p>
             <p>
               개원 이후에 더 복잡해지는{" "}
-              <span className="font-semibold text-primary">
+              <span className="font-semibold text-primary-darker">
                 운영·인력·청구·지표 관리
               </span>
               까지, 병원이 '
-              <span className="rounded bg-amber-100 px-1.5 py-0.5 font-semibold text-primary-dark">
+              <span className="rounded bg-amber-100 px-1.5 py-0.5 font-semibold text-primary-darker">
                 돌아가게
               </span>
               ' 만드는 일을 함께합니다.
@@ -125,7 +125,7 @@ export function Proof() {
             <p>
               단순 매출 기반 수수료를 받는 구조가 아니라,
               <br />
-              <span className="rounded bg-amber-100 px-1.5 py-0.5 font-semibold text-primary-dark">
+              <span className="rounded bg-amber-100 px-1.5 py-0.5 font-semibold text-primary-darker">
                 현장에 남아 성과를 관리하는 운영 파트너
               </span>
               입니다.

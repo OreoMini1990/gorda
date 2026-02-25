@@ -20,7 +20,7 @@ export function Problem() {
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-6 text-3xl font-bold text-primary md:text-4xl"
+          className="mb-6 text-3xl font-bold text-primary-darker md:text-4xl"
         >
           왜 개원 컨설팅은 항상 불투명하고 비쌀까요?
         </motion.h2>
