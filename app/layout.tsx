@@ -18,10 +18,10 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/brand/gorda-logo.png",
+        url: "/brand/og-image.png",
         width: 1200,
         height: 630,
-        alt: "고르다컴퍼니",
+        alt: "GORDA COMPANY",
       },
     ],
   },
@@ -30,7 +30,13 @@ export const metadata: Metadata = {
     title: "고르다컴퍼니 | 필요한 것만 고르는 1:1맞춤 개원컨설팅",
     description:
       "실전 개원 경험 기반 선택형 개원 컨설팅 플랫폼. 필요한 것만 고르십시오.",
-    images: ["/brand/gorda-logo.png"],
+    images: ["/brand/og-image.png"],
+  },
+  verification: {
+    other: {
+      "naver-site-verification":
+        "004e926a7d124a13d04a04ef9c3751e06ed960e1",
+    },
   },
 };
 
