@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 
-const TO_EMAIL = "oreomini1990@gmail.com";
+const TO_EMAIL = "withgorda@gmail.com";
 const DEFAULT_FROM = "GORDA 랜딩 <onboarding@resend.dev>";
 
 export type ContactBody = {
