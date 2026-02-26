@@ -3,10 +3,10 @@
 import { useState, useEffect } from "react";
 
 const NAV_LINKS = [
-  { label: "문제점",    href: "#problem"   },
+  { label: "Needs",     href: "#problem"   },
   { label: "솔루션",   href: "#solution"  },
-  { label: "증명",     href: "#proof"     },
-  { label: "파트너",    href: "#medifirst" },
+  { label: "성과",     href: "#proof"     },
+  { label: "파트너십",  href: "#medifirst" },
 ];
 
 function useScrollSpy(ids: string[]) {
