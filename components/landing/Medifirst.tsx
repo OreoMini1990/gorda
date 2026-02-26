@@ -8,7 +8,7 @@ const PARTNERS = [
   { id: "huvert",   name: "휴버트",        sub: "의료 전문 파트너",      logo: "/brand/huvert-logo.png", hideText: true },
   { id: "wimento",  name: "위멘토",        sub: "직무 교육 플랫폼",      logo: "/brand/wimento-logo.png", hideText: true },
   { id: "dakun",    name: "다큰",          sub: "의료 인력 솔루션",      logo: "/brand/dakun-logo.png", hideText: true },
-  { id: "sinwon",   name: "신원의료재단",  sub: "의료 운영 재단",        logo: "/brand/sinwon-logo.png?v=2", hideText: true },
+  { id: "ando",     name: "안도공간",      sub: "의료 운영 재단",        logo: "/brand/ando-logo.png", hideText: true },
 ];
 
 export function Medifirst() {
